@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form action="">
+            <i class="far fa-user"></i>
+            <input type="email" placeholder="enter your email" class="box">
+            <input type="password" placeholder="enter your password" class="box">
+            <input type="submit" value="login">
+            <p>don't have an account? <a href="#">sign up</a></p>
+            <p>forget your password? <a href="#">clike here</a></p>
+        </form>
+
+    </div>
+
+    <script>
+        let colors = [
+            '#74b9ff',
+            '#ff7675',
+            '#fd79a8',
+            '#fdcb6e',
+            '#55efc4',
+            '#fd9644'
+        ]
+
+
+
+        function createElement() {
+
+            let container = document.querySelector(".container")
+            let span = document.createElement('span');
+
+            var size = Math.random() * 50;
+            let bg = colors[Math.floor(Math.random() * colors.length)];
+
+            span.style.height = 50 + size + "px";
+            span.style.width = 50 + size + "px";
+            span.style.top = Math.random() * innerHeight + "px";
+            span.style.left = Math.random() * innerWidth + "px";
+            span.style.background = bg;
+
+
+            container.appendChild(span);
+
+            setTimeout(() => {
+                span.remove()
+            }, 5000);
+        }
+
+        setInterval(createElement, 150);
+    </script>
+
+
+
+
+
+</body>
+
+</html>
